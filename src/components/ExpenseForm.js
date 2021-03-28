@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "./AppContext";
 import { v4 as uuid } from "uuid";
+import Button from '@material-ui/core/Button';
+import { TextField } from "@material-ui/core";
 
 
 export default function ExpenseForm(props) {
@@ -25,35 +27,40 @@ export default function ExpenseForm(props) {
 
     return (
         <form onSubmit={onSubmit}>
-            <div>
-                <div >
-                    <label htmlFor='name'>Name</label>
-                    <input
-                        required='required'
-                        type='text'
-                        id='name'
-                        value={name}
-                        onChange={(event) => setName(event.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor='cost'>Cost</label>
-                    <input
-                        required='required'
-                        type='number'
-                        id='cost'
-                        value={cost}
-                        onChange={(event) => setCost(event.target.value)}
-                    />
-                </div>
-            </div>
-            <div>
-                <div >
-                    <button type='submit' >
-                        Save
-                    </button>
-                </div>
-            </div>
+            <TextField
+                fullWidth
+                variant="outlined"
+                label="Name"
+                autoComplete="name"
+                margin="normal"
+                required
+                type='text'
+                id='name'
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+            />
+
+            <TextField
+                required
+                variant="outlined"
+                label="Cost"
+                margin="normal"
+                fullWidth
+                autoComplete="Cost"
+                type='number'
+                id='cost'
+                value={cost}
+                onChange={(event) => setCost(event.target.value)}
+            />
+
+        <Button
+            type='submit'
+            variant="contained"
+            color="primary"
+            fullWidth
+        >
+            Save
+        </Button>
         </form>
     )
 }

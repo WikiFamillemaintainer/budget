@@ -1,11 +1,14 @@
 import React from "react";
+import {TableCell, TableRow} from "@material-ui/core";
 
 
 export default function TotalsField(props) {
 
     return (
-        <div>
-            <p>{props.name}: {props.amount}€</p>
-        </div>
+        <TableRow>
+            <TableCell>{props.name}</TableCell>
+            <TableCell>{props.amount}€</TableCell>
+            <TableCell></TableCell>
+        </TableRow>
     )
 }

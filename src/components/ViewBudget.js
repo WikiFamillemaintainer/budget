@@ -1,16 +1,28 @@
 import React from "react";
+import {TableCell, TableRow} from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 
 export default function ViewBudget(props) {
 
     return (
-        <>
-            <span>{props.name}: {props.amount}€</span>
-            <button
-            type="button"
-            onClick={props.handleEditClick}
-            >
-                Edit
-            </button>
-        </>
+        <TableRow>
+            <TableCell>
+                <span>{props.name}</span>
+            </TableCell>
+            <TableCell>
+                {props.amount}€
+            </TableCell>
+            <TableCell>
+                <Button
+                    type="button"
+                    variant="contained"
+                    color="primary"
+                    onClick={props.handleEditClick}
+                >
+                    Edit
+                </Button>
+            </TableCell>
+
+        </TableRow>
     )
 }

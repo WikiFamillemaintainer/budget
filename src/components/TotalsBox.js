@@ -3,6 +3,7 @@ import TotalsField from "./TotalsField";
 import { AppContext } from "./AppContext";
 import EditBudget from "./EditBudget";
 import ViewBudget from "./ViewBudget";
+import {Table, TableContainer} from "@material-ui/core";
 
 
 export default function TotalsBox(props) {
@@ -29,7 +30,8 @@ export default function TotalsBox(props) {
     }
 
     return (
-        <div>
+        <TableContainer>
+        <Table>
             {
                 editBudget ?
                     <EditBudget budget={budget} handleSaveClick={handleSaveClick} />
@@ -38,6 +40,7 @@ export default function TotalsBox(props) {
             }
             <TotalsField name="In" amount={budget-out}/>
             <TotalsField name="Out" amount={out}/>
-        </div>
+        </Table>
+        </TableContainer>
     )
 }

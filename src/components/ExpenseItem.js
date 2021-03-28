@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
-import {TiDelete} from "react-icons/all";
 import { AppContext } from "./AppContext";
+import {ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
 
 
@@ -15,14 +16,18 @@ export default function ExpenseItem(props) {
     }
 
     return (
-        <li>
-            {props.name}
-            <div>
-                <span>{props.cost}€</span>
-                <TiDelete
-                    onClick={handleDelete}
-                />
-            </div>
-        </li>
+        <ListItem>
+            <ListItemText>
+                {props.name}
+            </ListItemText>
+
+            <ListItemText>{props.cost}€</ListItemText>
+            <ListItemIcon>
+                <HighlightOffIcon
+                onClick={handleDelete}
+            />
+            </ListItemIcon>
+
+        </ListItem>
     )
 }

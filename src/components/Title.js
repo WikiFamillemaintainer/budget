@@ -1,10 +1,10 @@
 import React from "react";
+import {Typography} from "@material-ui/core";
 
 
 export default function Title(props) {
     return {
-        h1: <h1>{props.title}</h1>,
-        h2: <h2>{props.title}</h2>,
-        h3: <h3>{props.title}</h3>
+        h1: <Typography variant="h1" color="primary">{props.title}</Typography>,
+        h2: <Typography variant="h4" color="primary" >{props.title}</Typography>,
     }[props.level]
 }
